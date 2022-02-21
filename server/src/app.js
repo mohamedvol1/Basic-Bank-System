@@ -15,14 +15,14 @@ app.use(express.json());
 app.use(customerRouter);
 
 // app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
+}
 
 app.get("*", (req, res) => {
 	console.log('no route')
 	return res.sendFile(path.join(__dirname, '..', '..', 'client/build/index.html'))
 })
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
-}
 
 module.exports = app;
