@@ -91,7 +91,10 @@ async function httpPostCusotmerTransaction(req, res) {
 			await t.any(q3, v3);
 			return { msg: 'transaction is done', newBalance: newBalance[0].client_balance, latestTransaction };
 		})
-		.then(({ msg, newBalance, latestTransaction }) => res.json({ msg, newBalance, latestTransaction }))
+		.then(({ msg, newBalance, latestTransaction }) => {
+			console.log("port here")
+			res.json({ msg, newBalance, latestTransaction })
+		})
 		.catch((err) => res.json({ msg: 'Error in transction: ' + err.message }));
 }
 

@@ -41,16 +41,6 @@ const ClientProfile = () => {
 	//posting form and fetching new info
 	const handleSubmit = () => {
 		setIsTransactionPending(true);
-		// fetch(`http://localhost:8000/customers/${params.id}`, {
-		// 	method: 'POST',
-		// 	headers: { 'Content-Type': 'application/json' },
-		// 	body: JSON.stringify({
-		// 		beneficiary_name: beneficiaryName,
-		// 		beneficiary_id: beneficiaryId,
-		// 		amount: amount
-		// 	})
-		// })
-		// 	.then((res) => res.json(res))
 		httpPostClientTransaction(
 			params.id,
 			beneficiaryName,

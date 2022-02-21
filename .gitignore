@@ -6,12 +6,14 @@
 
 #server modules
 /server/node_modules
+/server/.env
 
 # testing
 /client/coverage
 
 # production
 /client/build
+
 
 # misc
 /client/.DS_Store
