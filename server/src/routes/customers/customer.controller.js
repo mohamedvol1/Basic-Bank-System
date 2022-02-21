@@ -1,5 +1,4 @@
 const path = require('path');
-const { query } = require('../../models/db');
 const db = require(path.join(__dirname, '..', '..', 'models', 'db.js'));
 
 async function httpGetAllCustomers(req, res) {

@@ -14,4 +14,3 @@ customerRouter.post('/customers/:customerid', httpPostCusotmerTransaction);
 
 
 module.exports = customerRouter;
-// 
