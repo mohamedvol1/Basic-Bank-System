@@ -6,10 +6,12 @@ const app = express();
 
 const customerRouter = require('./routes/customers/customer.router');
 
+// {
+// 		origin: ['http://localhost:3000', 'http://ez-bank.herokuapp.com']
+// 	}
+
 app.use(
-	cors({
-		origin: ['http://localhost:3000', 'https://ez-bank.herokuapp.com']
-	})
+	cors()
 );
 app.use(express.json());
 app.use(customerRouter);
