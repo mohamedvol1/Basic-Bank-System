@@ -2,7 +2,7 @@
   "name": "basicbankingsystem_1",
   "version": "1.0.0",
   "description": "basic bank system that handles clients transfers",
-  "main": "index.js",
+  "main": "server/src/server.js",
   "engines": {
     "node": "16.6.2",
     "npm": "8.3.0"
