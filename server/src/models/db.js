@@ -13,6 +13,8 @@ const proConfig = {
 	connectionString: process.env.DATABASE_URL // heroku database string
 };
 
+console.log('xxxxxxxxxxxxxxxx', process.env.DATABASE_URL)
+
 const db = pgp(process.env.NODE_ENV === 'production' ? proConfig : devConfig);
 
 module.exports = db;
