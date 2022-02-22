@@ -10,10 +10,11 @@ const devConfig = {
 };
 
 const proConfig = {
-	connectionString: process.env.DATABASE_URL // heroku database string
+	connectionString: process.env.DATABASE_URL, // heroku database string
+	ssl: { rejectUnauthorized: false }
 };
 
-console.log('xxxxxxxxxxxxxxxx', process.env.DATABASE_URL)
+console.log('xxxxxxxxxxxxxxxx', process.env.DATABASE_URL);
 
 const db = pgp(process.env.NODE_ENV === 'production' ? proConfig : devConfig);
 
