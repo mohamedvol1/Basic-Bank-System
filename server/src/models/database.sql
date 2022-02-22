@@ -13,7 +13,7 @@ CREATE TABLE public.clients (
 
 
 CREATE TABLE public.transactions (
-  transaction_created_at timestamp without time zone NOT NULL,
+  transaction_created_at timestamp without time zone DEFAULT now() NOT NULL,
   amount numeric(8, 2) NULL,
   beneficiary_id integer NULL,
   sender_id integer NULL,
