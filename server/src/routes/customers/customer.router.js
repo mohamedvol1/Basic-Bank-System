@@ -12,5 +12,4 @@ customerRouter.get('/customers/:customerid', httpGetCustomerById);
 
 customerRouter.post('/customers/:customerid', httpPostCusotmerTransaction);
 
-
 module.exports = customerRouter;

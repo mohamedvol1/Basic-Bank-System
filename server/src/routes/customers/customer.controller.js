@@ -97,6 +97,7 @@ async function httpPostCusotmerTransaction(req, res) {
 		.catch((err) => res.json({ msg: 'Error in transction: ' + err.message }));
 }
 
+
 module.exports = {
 	httpGetAllCustomers,
 	httpGetCustomerById,
