@@ -17,7 +17,7 @@ const Footer = () => {
       color: "white"
     }}>
     
-      <div><p>Copyright © Your Website 2021</p></div>
+      <div><p>Copyright © Your Website 2022</p></div>
 
     </footer>
 	);
