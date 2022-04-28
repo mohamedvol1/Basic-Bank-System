@@ -27,6 +27,12 @@ ADD
         ON UPDATE NO ACTION
         ON DELETE NO ACTION;
 
+-- add password column to clients table
+
+ALTER TABLE clients
+ADD pass varchar(255);
+
+
 
 INSERT INTO clients (client_name,client_phone,client_email, client_balance)
 VALUES

@@ -13,6 +13,9 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
 }
 
+// for development (should be removed)
+app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
+
 app.use(customerRouter);
 
 app.get('*', (req, res) => {
