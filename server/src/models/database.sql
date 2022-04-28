@@ -11,6 +11,15 @@ CREATE TABLE public.clients (
   client_id SERIAL PRIMARY KEY
 );
 
+-- admins table
+CREATE TABLE public.admins (
+  admin_id SERIAL PRIMARY KEY,
+  admin_name character varying(100) NOT NULL,
+  admin_email character varying(100) NULL,
+  admin_phone character varying(50) NULL,
+  pass character varying(255)
+);
+
 
 CREATE TABLE public.transactions (
   transaction_created_at timestamp without time zone DEFAULT now() NOT NULL,
@@ -33,6 +42,12 @@ ALTER TABLE clients
 ADD pass varchar(255);
 
 
+-- insert admin data
+INSERT INTO admins (admin_name,admin_phone,admin_email, pass)
+VALUES
+  ('mhmd','123456789','mhmd@gmail.com', '$2b$10$OmjbssrBiXtb4hSUN122/ecZxk74HfeyDnb1dRvdcVuXYiq3z7VJq')
+
+-- insert clients data
 
 INSERT INTO clients (client_name,client_phone,client_email, client_balance)
 VALUES

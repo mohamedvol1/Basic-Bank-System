@@ -18,7 +18,6 @@ customerRouter.post('/customers', httpAddCustomers);
 
 customerRouter.post('/customers/login', httpLoginCustomer);
 
-
 customerRouter.get('/customers/:customerid', httpGetCustomerById);
 
 customerRouter.post('/customers/:customerid', httpPostCusotmerTransaction);

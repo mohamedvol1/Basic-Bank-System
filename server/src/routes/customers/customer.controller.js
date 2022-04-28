@@ -2,15 +2,6 @@ const path = require('path');
 const db = require(path.join(__dirname, '..', '..', 'models', 'db.js'));
 const bcrypt = require('bcrypt');
 
-async function is_password(input_pw, client_pass) {
-	let isEqual = await bcrypt.compare(input_pw, client_pass)
-	console.log('ressult', isEqual)
-	if (isEqual) {
-		return true;
-	}
-	return false;
-}
-
 async function httpLoginCustomer(req, res) {
 	const { email, password } = req.body;
 	await db
@@ -21,7 +12,6 @@ async function httpLoginCustomer(req, res) {
 				// compare input pass with client pass from database
 				let isEqual = await bcrypt.compare(password, data[0].pass)
 				if (isEqual) {
-					console.log('going here')
 					return res.json(data);
 				}
 				return res.status(400).json('wrong password');
@@ -68,6 +58,7 @@ async function httpAddCustomers(req, res) {
 
 	return;
 }
+
 
 async function httpGetAllCustomers(req, res) {
 	return await db.any('select * from clients order by client_id').then((rows) => res.json(rows));

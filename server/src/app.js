@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const customerRouter = require('./routes/customers/customer.router');
+const adminsRouter = require('./routes/admins/admins.router');
 
 const app = express();
 
@@ -17,6 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(express.static(path.join(__dirname, '..', '..', 'client/build')));
 
 app.use(customerRouter);
+app.use(adminsRouter);
 
 app.get('*', (req, res) => {
 	console.log('no route');
