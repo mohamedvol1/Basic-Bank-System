@@ -15,7 +15,8 @@ const ClientsPage = ({ user }) => {
 	const clients = useClients();
 
 	return (
-		Object.keys(user).length !== 0 && (
+		Object.keys(user).length !== 0 &&
+		user['admin_id'] && (
 			<Fragment>
 				<h1>All Clients</h1>
 				{clients.length ? (
