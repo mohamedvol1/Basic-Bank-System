@@ -21,8 +21,8 @@ const httpGetClientById = async (id) => {
 	return await response.json();
 };
 
-const httpPostUsertToSignin = async ({email, password, userType}) => {
-	const endPoint = userType === 'Client'? `/customers/login` : `admins/login`
+const httpPostUsertToSignin = async ({ email, password, userType }) => {
+	const endPoint = userType === 'Client' ? `/customers/login` : `admins/login`;
 	const response = await fetch(endPoint, {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -34,5 +34,19 @@ const httpPostUsertToSignin = async ({email, password, userType}) => {
 	return await response.json();
 };
 
+const httpPostNewUser = async ({ name, phone, email, balance, password }) => {
+	const response = await fetch('/customers', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			name,
+			phone,
+			email,
+			balance,
+			password
+		})
+	});
+	return await response.json();
+};
 
-export { httpGetClients, httpPostClientTransaction, httpGetClientById, httpPostUsertToSignin };
+export { httpGetClients, httpPostClientTransaction, httpGetClientById, httpPostUsertToSignin, httpPostNewUser };

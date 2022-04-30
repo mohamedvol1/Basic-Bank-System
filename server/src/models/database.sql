@@ -49,15 +49,15 @@ VALUES
 
 -- insert clients data
 
-INSERT INTO clients (client_name,client_phone,client_email, client_balance)
-VALUES
-  ('Scarlet Beasley','(187) 543-7942','adipiscing.lacus@yahoo.net', 900),
-  ('Desirae Sparks','1-154-337-2501','malesuada.fringilla@outlook.org', 1400),
-  ('Quamar Greene','(655) 618-3325','nunc.sit.amet@icloud.net', 600),
-  ('Hamilton Johns','1-862-278-3774','varius.nam.porttitor@icloud.com', 5000),
-  ('Amelia Foreman','(752) 215-1623','velit.quisque.varius@google.ca', 3500),
-  ('Tobias Joyner','1-736-384-6398','vivamus@protonmail.net', 780),
-  ('Mariam Shields','1-506-634-4574','risus.a.ultricies@aol.edu', 6000),
-  ('Quail Chambers','1-436-587-2658','metus.eu@aol.edu', 9000),
-  ('Drew Battle','(368) 263-8943','sed.orci@google.org', 560),
-  ('Wyoming Bird','1-853-767-1575','mattis.velit.justo@icloud.edu', 874);
+-- INSERT INTO clients (client_name,client_phone,client_email, client_balance)
+-- VALUES
+--   ('Scarlet Beasley','(187) 543-7942','adipiscing.lacus@yahoo.net', 900),
+--   ('Desirae Sparks','1-154-337-2501','malesuada.fringilla@outlook.org', 1400),
+--   ('Quamar Greene','(655) 618-3325','nunc.sit.amet@icloud.net', 600),
+--   ('Hamilton Johns','1-862-278-3774','varius.nam.porttitor@icloud.com', 5000),
+--   ('Amelia Foreman','(752) 215-1623','velit.quisque.varius@google.ca', 3500),
+--   ('Tobias Joyner','1-736-384-6398','vivamus@protonmail.net', 780),
+--   ('Mariam Shields','1-506-634-4574','risus.a.ultricies@aol.edu', 6000),
+--   ('Quail Chambers','1-436-587-2658','metus.eu@aol.edu', 9000),
+--   ('Drew Battle','(368) 263-8943','sed.orci@google.org', 560),
+--   ('Wyoming Bird','1-853-767-1575','mattis.velit.justo@icloud.edu', 874);

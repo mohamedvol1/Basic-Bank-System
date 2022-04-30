@@ -10,6 +10,8 @@ import ClientsPage from './pages/ClientsPage/ClientsPage';
 import ClientProfile from './pages/ClientProfile/ClientProfile';
 import LoginForm from './components/LoginForm/LoginForm';
 import LoginPage from './pages/LoginPage/LoginPage';
+import SignUpPage from './pages/SignUpPage/SignUpPage';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 
 import { useCallback, useEffect, useState } from 'react';
 
@@ -43,6 +45,7 @@ function App() {
 					path="client"
 					element={<LoginPage LoginForm={<LoginForm setUser={setUserSession} userType={'Client'} />} />}
 				/>
+				<Route path="signup" element={<SignUpPage SignUpForm={<SignUpForm user={user} />} />} />
 				<Route path="clients" element={<ClientsPage user={user} />} />
 				<Route path="clients/:id" element={<ClientProfile user={user} />} />
 			</Routes>

@@ -38,7 +38,7 @@ const NavigationBar = ({ user, setUser }) => {
 	} else {
 		// admin viea
 		if (user['admin_email']) {
-			pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' } ];
+			pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' }, { page: 'Add Client', path: 'signup' } ];
 		} else {
 			// client viea
 			pages = [ { page: 'Home', path: '/' } ];
