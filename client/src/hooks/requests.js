@@ -21,4 +21,18 @@ const httpGetClientById = async (id) => {
 	return await response.json();
 };
 
-export { httpGetClients, httpPostClientTransaction, httpGetClientById };
+const httpPostUsertToSignin = async ({email, password, userType}) => {
+	const endPoint = userType === 'Client'? `/customers/login` : `admins/login`
+	const response = await fetch(endPoint, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({
+			email,
+			password
+		})
+	});
+	return await response.json();
+};
+
+
+export { httpGetClients, httpPostClientTransaction, httpGetClientById, httpPostUsertToSignin };

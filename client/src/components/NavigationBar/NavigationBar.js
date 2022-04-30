@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Fragment } from 'react';
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -10,9 +11,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const NavigationBar = () => {
+const NavigationBar = ({ user, setUser }) => {
 	const Navigate = useNavigate();
 
 	const [ anchorElNav, setAnchorElNav ] = React.useState(null);
@@ -23,8 +24,26 @@ const NavigationBar = () => {
 	const handleCloseNavMenu = () => {
 		setAnchorElNav(null);
 	};
+	const endUserSession = () => {
+		// clearing user data
+		localStorage.clear();
+		setUser({});
+		Navigate('/');
+	};
 
-	const pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' } ];
+	let pages = [];
+	if (Object.keys(user).length === 0) {
+		// default viea
+		pages = [ { page: 'Home', path: '/' }, { page: 'Admin', path: 'admin' }, { page: 'Client', path: 'client' } ];
+	} else {
+		// admin viea
+		if (user['admin_email']) {
+			pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' } ];
+		} else {
+			// client viea
+			pages = [ { page: 'Home', path: '/' } ];
+		}
+	}
 
 	return (
 		<Box sx={{ flexGrow: 1 }}>
@@ -90,6 +109,27 @@ const NavigationBar = () => {
 									{page.page}
 								</Button>
 							))}
+							{Object.keys(user).length !== 0 && (
+								<Fragment>
+									<MenuItem key={'Logout'} onClick={() => {}}>
+										<Typography
+											key={'Logout'}
+											sx={{ my: 2, color: 'white', display: 'block' }}
+											onClick={endUserSession}
+										>
+											Logout
+										</Typography>
+									</MenuItem>
+									<MenuItem key={user['admin_id'] || user['client_id']} onClick={handleCloseNavMenu}>
+										<Typography
+											key={user['admin_id'] || user['client_id']}
+											sx={{ my: 2, color: 'white', display: 'block' }}
+										>
+											Hi {user['admin_name'] || user['client_name']}
+										</Typography>
+									</MenuItem>
+								</Fragment>
+							)}
 						</Box>
 					</Toolbar>
 				</Container>
