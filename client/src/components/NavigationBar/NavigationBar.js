@@ -38,10 +38,10 @@ const NavigationBar = ({ user, setUser }) => {
 	} else {
 		// admin viea
 		if (user['admin_email']) {
-			pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' }, { page: 'Add Client', path: 'signup' } ];
+			pages = [ { page: 'Home', path: '/' }, { page: 'View all Clients', path: 'clients' }, { page: 'Add Client', path: 'signup' }, { page: `Hi ${user['admin_name']}`, path: '/' } ];
 		} else {
 			// client viea
-			pages = [ { page: 'Home', path: '/' } ];
+			pages = [ { page: 'Home', path: '/' }, { page: `Hi ${user['client_name']}`, path: `/clients/${user['client_id']}` } ];
 		}
 	}
 
@@ -110,26 +110,16 @@ const NavigationBar = ({ user, setUser }) => {
 								</Button>
 							))}
 							{Object.keys(user).length !== 0 && (
-								<Fragment>
-									<MenuItem key={'Logout'} onClick={() => {}}>
+									<Button key={'Logout'} onClick={endUserSession}>
 										<Typography
 											key={'Logout'}
 											sx={{ my: 2, color: 'white', display: 'block' }}
-											onClick={endUserSession}
+											// onClick={}
 										>
 											Logout
 										</Typography>
-									</MenuItem>
-									<MenuItem key={user['admin_id'] || user['client_id']} onClick={handleCloseNavMenu}>
-										<Typography
-											key={user['admin_id'] || user['client_id']}
-											sx={{ my: 2, color: 'white', display: 'block' }}
-										>
-											Hi {user['admin_name'] || user['client_name']}
-										</Typography>
-									</MenuItem>
-								</Fragment>
-							)}
+									</Button>
+								)}
 						</Box>
 					</Toolbar>
 				</Container>
