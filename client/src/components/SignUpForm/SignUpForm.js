@@ -17,7 +17,7 @@ const SignUpForm = ({ user }) => {
 			return;
 		}
 		const data = { name, phone, email, balance, password: pass };
-		httpPostNewUser(data).then((res) => console.log(res)).catch((err) => console.log(err));
+		httpPostNewUser(data).then((res) => alert(res)).catch((err) => console.log('Error: ', err));
 	};
 
 	return (

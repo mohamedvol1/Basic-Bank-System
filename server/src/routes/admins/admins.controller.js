@@ -1,16 +1,15 @@
 const path = require('path');
-const db = require(path.join(__dirname, '..', '..', 'models', 'db.js'));
+const { Admins } = require(path.join(__dirname, '..', '..', 'models', 'admins.models.js'));
 const bcrypt = require('bcrypt');
 
 async function httpLoginAdmins(req, res) {
 	const { email, password } = req.body;
-	await db
-		.any('SELECT * FROM admins WHERE admin_email = $1', [ email ])
+	await Admins.getAdminByEmail(email)
 		.then(async function(data) {
 			// success;
 			if (data.length) {
 				// compare input pass with client pass from database
-				let isEqual = await bcrypt.compare(password, data[0].pass)
+				let isEqual = await bcrypt.compare(password, data[0].pass);
 				if (isEqual) {
 					return res.json(data);
 				}

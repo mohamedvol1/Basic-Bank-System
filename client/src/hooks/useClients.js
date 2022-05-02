@@ -26,9 +26,9 @@ const useClientData = (id) => {
 	const [ transactions, setTransactions ] = useState([]);
 
 	useEffect(() => {
-		httpGetClientById(id).then(({ clientData, clinetTransactions }) => {
+		httpGetClientById(id).then(({ clientData, clientTransactions }) => {
 			setClient(clientData);
-			setTransactions(clinetTransactions);
+			setTransactions(clientTransactions);
 		});
 	}, []);
 
