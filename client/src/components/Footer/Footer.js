@@ -17,7 +17,7 @@ const Footer = () => {
       color: "white"
     }}>
     
-      <div><p>Copyright © Your Website 2022</p></div>
+      <div><p>Copyright © <a target="_blank" rel="noreferrer" href="https://github.com/mohamedvol1" >Github</a> 2022</p></div>
 
     </footer>
 	);
