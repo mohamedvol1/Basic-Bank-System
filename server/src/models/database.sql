@@ -1,7 +1,9 @@
 
 -- Table: public.clients
 
--- DROP TABLE public.clients;
+DROP TABLE public.clients;
+DROP TABLE public.transactions;
+DROP TABLE public.admins;
 
 CREATE TABLE public.clients (
   client_balance numeric(8, 2) NULL,
@@ -28,6 +30,7 @@ CREATE TABLE public.transactions (
   sender_id integer NULL,
   transaction_id SERIAL PRIMARY KEY
 );
+
 ALTER TABLE
   public.transactions
 ADD
@@ -45,7 +48,7 @@ ADD pass varchar(255);
 -- insert admin data
 INSERT INTO admins (admin_name,admin_phone,admin_email, pass)
 VALUES
-  ('mhmd','123456789','mhmd@gmail.com', '$2b$10$OmjbssrBiXtb4hSUN122/ecZxk74HfeyDnb1dRvdcVuXYiq3z7VJq')
+  ('admin','123456789','admin@gmail.com', '$2b$10$WqiyDIDFG60tHGh7UNxI3.qHkFiu.jxumvE0VzTDbhVgCo8hJW5LO')
 
 -- insert clients data
 
