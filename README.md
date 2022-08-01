@@ -6,9 +6,9 @@ pass: admin
 ## walkthrough
 this application helps you to transfer money among clients registered on the app:-
 
-- first, you log in as admin using the mentioned credentials and add any fake email and password and have
+- first, you log in as admin using the mentioned credentials and add any fake email and password
 - then take a look at the clients' page while you logged in as admin because you won't be apple to see it unless you logged in as an admin
-- after you can pick any account and memorize his/her name as its registered and his/her id (in real example should be the number of a bank account)
+- after you can pick any account and memorize his/her name and his/her id as its registered (in real example should be the number of a bank account)
 - logout from the admin account and log in as a client using the credentials (email and password) you created in the previous step
 - now you can transfer the money to the account that you want but you need to know the name and id (you have already got this information while logging in as admin),   make sure the amount of money that you send isn't more than you have unless the transaction won't be completed
 
