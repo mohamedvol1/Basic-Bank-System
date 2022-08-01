@@ -1,5 +1,5 @@
 # Basic-Bank-System
-to use this app you log in as an admin using the following credentials (to create to add yourself as a client because only admin can add clients): 
+to use this app you log in as an admin using the following credentials (to add yourself as a client because only admin can add clients): 
 Email: admin@gmail.com  
 pass: admin
 
